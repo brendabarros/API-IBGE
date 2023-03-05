@@ -4,13 +4,13 @@ let url ='https://servicodados.ibge.gov.br/api/v1/localidades/estados/PA/municip
 
 $.getJSON(url, function(data){
 
-    let conteudo = '<ul>';
+    let conteudo = '<optiongroup>';
     $.each(data, function( v , val){
-       conteudo += '<li>'+ val.nome +'</li>';
+       conteudo += '<option>'+ val.nome +'</option>';
 
     });
-   conteudo += '</ul>';
+   conteudo += '</optiongroup>';
 
-   $("#listaM").html(conteudo);
+   $("#municipios").html(conteudo);
    console.log(data);
 });
